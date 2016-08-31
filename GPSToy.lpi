@@ -33,7 +33,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="6">
       <Unit0>
         <Filename Value="GPSToy.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -52,15 +52,32 @@
         <ComponentName Value="Desenho"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UDesenho"/>
       </Unit2>
       <Unit3>
-        <Filename Value="umenulateral.pas"/>
+        <Filename Value="UMenuLateral.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MenuLateral"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMenuLateral"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="uajustarvolume.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AjustarVolume"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UAjustarVolume"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="udmimagens.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DmImagens"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="UDmImagens"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -74,8 +91,8 @@
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <CodeGeneration>
-      <TargetCPU Value="i386"/>
-      <TargetOS Value="win32"/>
+      <TargetCPU Value="arm"/>
+      <TargetOS Value="wince"/>
     </CodeGeneration>
     <Linking>
       <Options>

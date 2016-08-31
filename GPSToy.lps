@@ -4,12 +4,12 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="6">
+    <Units Count="16">
       <Unit0>
         <Filename Value="GPSToy.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="57" Y="20"/>
-        <UsageCount Value="45"/>
+        <CursorPos X="7" Y="14"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -19,10 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMenuPrincipal"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="36"/>
-        <CursorPos X="33" Y="62"/>
-        <UsageCount Value="45"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <CursorPos Y="8"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -32,159 +32,250 @@
         <ComponentName Value="Desenho"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="40" Y="23"/>
-        <UsageCount Value="45"/>
+        <UnitName Value="UDesenho"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="81"/>
+        <CursorPos X="18" Y="83"/>
+        <UsageCount Value="105"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
-        <Filename Value="C:\lazarus\lcl\include\rasterimage.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="284"/>
-        <CursorPos Y="299"/>
-        <UsageCount Value="8"/>
-      </Unit3>
-      <Unit4>
-        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\objpas\sysutils\sysutilh.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="210"/>
-        <CursorPos X="14" Y="225"/>
-        <UsageCount Value="9"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="umenulateral.pas"/>
+        <Filename Value="UMenuLateral.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MenuLateral"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMenuLateral"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="54"/>
-        <CursorPos Y="65"/>
-        <UsageCount Value="21"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="80"/>
+        <CursorPos X="57" Y="104"/>
+        <FoldState Value=" T3j90401312N"/>
+        <UsageCount Value="81"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\lazarus\lcl\include\rasterimage.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="284"/>
+        <CursorPos Y="299"/>
+        <UsageCount Value="2"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\objpas\sysutils\sysutilh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="210"/>
+        <CursorPos X="14" Y="225"/>
+        <UsageCount Value="3"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="C:\lazarus\lcl\interfaces\wince\wincewsfactory.pas"/>
+        <UnitName Value="WinCEWSFactory"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="73"/>
+        <CursorPos X="12" Y="108"/>
+        <UsageCount Value="5"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\lazarus\lcl\interfaces\wince\wincewsextctrls.pp"/>
+        <UnitName Value="WinCEWSExtCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="153"/>
+        <UsageCount Value="5"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\winceunits\src\mmsystem.pp"/>
+        <UnitName Value="mmsystem"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="19"/>
+        <CursorPos X="14" Y="31"/>
+        <UsageCount Value="7"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\winunits-base\src\mmsystem.pp"/>
+        <UnitName Value="mmsystem"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2461"/>
+        <CursorPos X="48" Y="2475"/>
+        <UsageCount Value="6"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\win\sysosh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos X="3" Y="54"/>
+        <UsageCount Value="5"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\wince\wininc\base.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="164"/>
+        <CursorPos X="6" Y="178"/>
+        <UsageCount Value="7"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\win\wininc\base.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="159"/>
+        <CursorPos X="6" Y="173"/>
+        <UsageCount Value="6"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\inc\systemh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="76"/>
+        <CursorPos X="16" Y="92"/>
+        <UsageCount Value="5"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="uajustarvolume.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AjustarVolume"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UAjustarVolume"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="63"/>
+        <CursorPos X="59" Y="82"/>
+        <UsageCount Value="64"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="udmimagens.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DmImagens"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="UDmImagens"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="21" Y="38"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit15>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="101" Column="40" TopLine="81"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="168" Column="62" TopLine="144"/>
       </Position1>
       <Position2>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="100" Column="40" TopLine="80"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="80" Column="19" TopLine="55"/>
       </Position2>
       <Position3>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="99" Column="40" TopLine="79"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="155" Column="32" TopLine="113"/>
       </Position3>
       <Position4>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="98" Column="40" TopLine="78"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="78" Column="32" TopLine="55"/>
       </Position4>
       <Position5>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="68" Column="3" TopLine="66"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="86" Column="19" TopLine="83"/>
       </Position5>
       <Position6>
-        <Filename Value="umenulateral.pas"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="152" Column="58" TopLine="95"/>
       </Position6>
       <Position7>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="30" Column="49" TopLine="11"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="97" Column="3" TopLine="95"/>
       </Position7>
       <Position8>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="41" Column="15" TopLine="13"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="85" Column="3" TopLine="119"/>
       </Position8>
       <Position9>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="64" Column="5" TopLine="31"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="127" TopLine="125"/>
       </Position9>
       <Position10>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="30" Column="23" TopLine="13"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="47" Column="33" TopLine="33"/>
       </Position10>
       <Position11>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="60" Column="11" TopLine="44"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="187" Column="12" TopLine="163"/>
       </Position11>
       <Position12>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="64" Column="80" TopLine="55"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="11"/>
       </Position12>
       <Position13>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="100" Column="31" TopLine="78"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="103" Column="6" TopLine="100"/>
       </Position13>
       <Position14>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="68" Column="3" TopLine="66"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="110" Column="6" TopLine="107"/>
       </Position14>
       <Position15>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="13" Column="16" TopLine="13"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="75" Column="4" TopLine="67"/>
       </Position15>
       <Position16>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="71" Column="12" TopLine="6"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="96" Column="59" TopLine="73"/>
       </Position16>
       <Position17>
-        <Filename Value="GPSToy.lpr"/>
-        <Caret Line="12" Column="5"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="103" Column="59" TopLine="80"/>
       </Position17>
       <Position18>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="30" TopLine="10"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="64" Column="43" TopLine="62"/>
       </Position18>
       <Position19>
-        <Filename Value="UMenuPrincipal.pas"/>
-        <Caret Line="10" Column="16" TopLine="9"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="78" Column="3" TopLine="75"/>
       </Position19>
       <Position20>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="51" Column="21" TopLine="48"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="71" Column="9" TopLine="53"/>
       </Position20>
       <Position21>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="73" Column="21" TopLine="70"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="78" Column="27" TopLine="69"/>
       </Position21>
       <Position22>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="63" Column="24" TopLine="36"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="36" Column="22" TopLine="17"/>
       </Position22>
       <Position23>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="65" Column="24" TopLine="38"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="72" Column="59" TopLine="57"/>
       </Position23>
       <Position24>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="70" Column="23" TopLine="62"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="62" Column="31" TopLine="59"/>
       </Position24>
       <Position25>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="71" Column="26" TopLine="47"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="55" Column="5" TopLine="44"/>
       </Position25>
       <Position26>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="52" Column="5" TopLine="46"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="87" Column="26" TopLine="70"/>
       </Position26>
       <Position27>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="82" Column="16" TopLine="74"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="67" Column="39" TopLine="63"/>
       </Position27>
       <Position28>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="72" Column="14" TopLine="69"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="93" Column="67" TopLine="91"/>
       </Position28>
       <Position29>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="66" TopLine="55"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="67" Column="31" TopLine="63"/>
       </Position29>
       <Position30>
-        <Filename Value="umenulateral.pas"/>
-        <Caret Line="65" TopLine="54"/>
+        <Filename Value="uajustarvolume.pas"/>
+        <Caret Line="104" Column="45" TopLine="91"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

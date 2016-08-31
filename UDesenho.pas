@@ -5,45 +5,46 @@ unit UDesenho;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, StdCtrls, ComCtrls, ColorBox;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons, StdCtrls, ComCtrls, ColorBox,
+  UDmImagens, UMenuLateral;
 
 type
 
   { TDesenho }
 
   TDesenho = class(TForm)
-    btnSair: TSpeedButton;
-    GroupBox1: TGroupBox;
-    imgLockFront: TImage;
-    imgLockClose: TImage;
-    imgLockOpen: TImage;
+    btnMenu: TSpeedButton;
+    grpTraco: TGroupBox;
+    imgTrava: TImage;
     lbTraco: TLabel;
-    pnlDraw: TPanel;
+    pnlDesenho: TPanel;
     shAmarelo: TShape;
-    shLockBackground: TShape;
+    shTrava: TShape;
     shAzul: TShape;
     shRosa: TShape;
     shVerde: TShape;
     shPreto: TShape;
     btnLimpar: TSpeedButton;
     shBranco: TShape;
-    upTraco: TUpDown;
-    procedure btnSairClick(Sender: TObject);
+    udTraco: TUpDown;
+    procedure btnMenuClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure imgLockFrontClick(Sender: TObject);
-    procedure pnlDrawMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-    procedure pnlDrawMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
-    procedure pnlDrawMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure imgTravaClick(Sender: TObject);
+    procedure pnlDesenhoMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure pnlDesenhoMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
+    procedure pnlDesenhoMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure AtualizarCor(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure btnLimparClick(Sender: TObject);
-    procedure upTracoClick(Sender: TObject; Button: TUDBtnType);
+    procedure shTravaMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure udTracoClick(Sender: TObject; Button: TUDBtnType);
   private
     FBloqueado: Boolean;
     FMouseDown: Boolean;
     FX: Integer;
     FY: Integer;
     procedure AtualizarTraco;
+    procedure ProcessarTrava;
   public
     class procedure ShowScreen;
   end;
@@ -58,50 +59,43 @@ procedure TDesenho.FormShow(Sender: TObject);
 begin
   Top := 0;
   Left := 0;
-  Width := Screen.Width;
-  Height := Screen.Height;
+  Width := LARGURA_TELA;
+  Height := ALTURA_TELA;
 
-  btnSair.Top := 0;
-  btnSair.Left := Width - btnSair.Width;
+  btnMenu.Flat := True;
+  DmImagens.lstIcones.GetBitmap(ICONE_MENU, btnMenu.Glyph);
 
   BringToFront;
 
   AtualizarTraco;
 
-  pnlDraw.Canvas.Brush.Style := bsSolid;
-  pnlDraw.Canvas.Pen.Color := clBlack;
-  pnlDraw.Canvas.Brush.Color := clBlack;
+  pnlDesenho.Canvas.Brush.Style := bsSolid;
+  pnlDesenho.Canvas.Pen.Color := clBlack;
+  pnlDesenho.Canvas.Brush.Color := clBlack;
 
   FBloqueado := True;
-  imgLockFrontClick(Nil);
+  ProcessarTrava;
 
 end;
 
-procedure TDesenho.imgLockFrontClick(Sender: TObject);
+procedure TDesenho.imgTravaClick(Sender: TObject);
 begin
-  FBloqueado := not FBloqueado;
-
-  imgLockClose.Visible := FBloqueado;
-  imgLockOpen.Visible := not FBloqueado;
-
-  if FBloqueado then begin
-    shLockBackground.Brush.Color := clRed;
-  end else begin
-    shLockBackground.Brush.Color := clLime;
-  end;
+  ProcessarTrava;
 end;
 
-procedure TDesenho.btnSairClick(Sender: TObject);
+procedure TDesenho.btnMenuClick(Sender: TObject);
 begin
   if FBloqueado then begin
     Exit;
   end;
 
-  SysUtils.Beep;
-  Close;
+  if TMenuLateral.ShowMenu = mlrSair then begin
+    SysUtils.Beep;
+    Close;
+  end;
 end;
 
-procedure TDesenho.pnlDrawMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+procedure TDesenho.pnlDesenhoMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   AtualizarTraco;
 
@@ -110,21 +104,21 @@ begin
   FY := Y;
 end;
 
-procedure TDesenho.pnlDrawMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
+procedure TDesenho.pnlDesenhoMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
 var
   lDif: Integer;
 begin
   if FMouseDown then begin
-    lDif := pnlDraw.Canvas.Pen.Width div 6;
-    pnlDraw.Canvas.Ellipse(X - lDif, Y - lDif, X + lDif, Y + lDif);
+    lDif := pnlDesenho.Canvas.Pen.Width div 6;
+    pnlDesenho.Canvas.Ellipse(X - lDif, Y - lDif, X + lDif, Y + lDif);
 
-    pnlDraw.Canvas.Line(FX, FY, X, Y);
+    pnlDesenho.Canvas.Line(FX, FY, X, Y);
     FX := X;
     FY := Y;
   end;
 end;
 
-procedure TDesenho.pnlDrawMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+procedure TDesenho.pnlDesenhoMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   FMouseDown := False;
 end;
@@ -137,8 +131,8 @@ begin
 
   SysUtils.Beep;
 
-  pnlDraw.Canvas.Pen.Color := TShape(Sender).Brush.Color;
-  pnlDraw.Canvas.Brush.Color := TShape(Sender).Brush.Color;
+  pnlDesenho.Canvas.Pen.Color := TShape(Sender).Brush.Color;
+  pnlDesenho.Canvas.Brush.Color := TShape(Sender).Brush.Color;
 
   shPreto.Pen.Width := 1;
   shAmarelo.Pen.Width := 1;
@@ -156,10 +150,15 @@ begin
     Exit;
   end;
 
-  pnlDraw.Repaint;
+  pnlDesenho.Repaint;
 end;
 
-procedure TDesenho.upTracoClick(Sender: TObject; Button: TUDBtnType);
+procedure TDesenho.shTravaMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  ProcessarTrava;
+end;
+
+procedure TDesenho.udTracoClick(Sender: TObject; Button: TUDBtnType);
 begin
   AtualizarTraco;
 end;
@@ -169,8 +168,28 @@ begin
   if FBloqueado then begin
     Exit;
   end;
-  lbTraco.Caption := IntToStr(upTraco.Position);
-  pnlDraw.Canvas.Pen.Width := upTraco.Position;
+
+  lbTraco.Caption := IntToStr(udTraco.Position);
+  pnlDesenho.Canvas.Pen.Width := udTraco.Position;
+end;
+
+procedure TDesenho.ProcessarTrava;
+var
+  lIndiceIcone: Integer;
+  lCor: TColor;
+begin
+  FBloqueado := not FBloqueado;
+
+  if FBloqueado then begin
+    lIndiceIcone := ICONE_TRAVA_ON;
+    lCor := clRed;
+  end else begin
+    lIndiceIcone := ICONE_TRAVA_OFF;
+    lCor := clLime;
+  end;
+
+  DmImagens.lstIcones.GetBitmap(lIndiceIcone, imgTrava.Picture.Bitmap);
+  shTrava.Brush.Color := lCor;
 end;
 
 class procedure TDesenho.ShowScreen;

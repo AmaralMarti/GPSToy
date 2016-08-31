@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons, StdCtrls, Grids,
-  UMenuLateral, UDesenho;
+  UDmImagens, UMenuLateral, UDesenho;
 
 type
 
@@ -32,7 +32,7 @@ type
 
   end;
 
-Function PlaySoundW(x1: PWideChar; x2: HMODULE; x3: DWORD): longbool;stdcall; external 'coredll.dll' name 'PlaySoundW';
+Function PlaySoundW(x1: PWideChar; x2: HMODULE; x3: DWORD): longbool; stdcall; external 'coredll.dll' name 'PlaySoundW';
 
 var
   MenuPrincipal: TMenuPrincipal;
@@ -47,8 +47,11 @@ procedure TMenuPrincipal.FormShow(Sender: TObject);
 begin
   Top := 0;
   Left := 0;
-  Width := Screen.Width;
-  Height := Screen.Height;
+  Width := LARGURA_TELA;
+  Height := ALTURA_TELA;
+
+  btnMenu.Flat := True;
+  DmImagens.lstIcones.GetBitmap(ICONE_MENU, btnMenu.Glyph);
 
   BringToFront;
 end;
