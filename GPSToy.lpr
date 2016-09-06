@@ -8,11 +8,12 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms,
-  UDmImagens,
+  UDmGpsToy,
+  UAjustarVolume,
   UMenuPrincipal,
   UMenuLateral,
   UDesenho,
-  UAjustarVolume;
+  USonsAnimais;
 
 {$R *.res}
 
@@ -20,8 +21,8 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   TAjustarVolume.InicializarVolume;
+  Application.CreateForm(TDmGpsToy, DmGpsToy);
   Application.CreateForm(TMenuPrincipal, MenuPrincipal);
-  Application.CreateForm(TDmImagens, DmImagens);
   Application.Run;
 end.
 

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons, StdCtrls, ComCtrls, ColorBox,
-  UDmImagens, UMenuLateral;
+  UDmGpsToy, UMenuLateral;
 
 type
 
@@ -35,8 +35,7 @@ type
     procedure pnlDesenhoMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure AtualizarCor(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure btnLimparClick(Sender: TObject);
-    procedure shTravaMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
+    procedure shTravaMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure udTracoClick(Sender: TObject; Button: TUDBtnType);
   private
     FBloqueado: Boolean;
@@ -57,15 +56,7 @@ implementation
 
 procedure TDesenho.FormShow(Sender: TObject);
 begin
-  Top := 0;
-  Left := 0;
-  Width := LARGURA_TELA;
-  Height := ALTURA_TELA;
-
-  btnMenu.Flat := True;
-  DmImagens.lstIcones.GetBitmap(ICONE_MENU, btnMenu.Glyph);
-
-  BringToFront;
+  DmGpsToy.InicializaForm(Self);
 
   AtualizarTraco;
 
@@ -75,7 +66,6 @@ begin
 
   FBloqueado := True;
   ProcessarTrava;
-
 end;
 
 procedure TDesenho.imgTravaClick(Sender: TObject);
@@ -188,7 +178,7 @@ begin
     lCor := clLime;
   end;
 
-  DmImagens.lstIcones.GetBitmap(lIndiceIcone, imgTrava.Picture.Bitmap);
+  DmGpsToy.lstIcones.GetBitmap(lIndiceIcone, imgTrava.Picture.Bitmap);
   shTrava.Brush.Color := lCor;
 end;
 

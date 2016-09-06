@@ -5,13 +5,9 @@ unit UAjustarVolume;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, ComCtrls, mmsystem;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, ComCtrls, mmsystem;
 
 type
-
-  { TAjustarVolume }
-
   TAjustarVolume = class(TForm)
     btnOk: TButton;
     btnCancelar: TButton;
@@ -98,6 +94,7 @@ begin
   lbPercentual.Caption := IntToStr(FVolumeAtual * 10) + '%';
 end;
 
+// Tive que deixar os valores fixos mesmo, se eu usasse uma variável não funcionava (no Win8.1 funcionava, no WinCE é que não)
 class procedure TAjustarVolume.SetVolume(const pPercentual: Integer);
 begin
   case pPercentual of
@@ -141,6 +138,7 @@ begin
   Result := FMudo;
 end;
 
+// Alterna o MUDO entre ON e OFF
 class procedure TAjustarVolume.ChangeMudo;
 begin
   FMudo := not FMudo;
@@ -152,6 +150,7 @@ begin
   end;
 end;
 
+// Força o volume em 50% ao inicializar a aplicação
 class procedure TAjustarVolume.InicializarVolume;
 begin
   FMudo := False;
@@ -160,4 +159,3 @@ begin
 end;
 
 end.
-

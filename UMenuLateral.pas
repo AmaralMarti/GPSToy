@@ -6,13 +6,10 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Buttons, ExtCtrls, StdCtrls, registry,
-  UDmImagens, UAjustarVolume;
+  UDmGpsToy, UAjustarVolume;
 
 type
-
   TMenuLateralResult = (mlrNenhum, mlrSair);
-
-  { TMenuLateral }
 
   TMenuLateral = class(TForm)
     btnBrilho: TSpeedButton;
@@ -135,9 +132,10 @@ var
 begin
   Left := POSICAO_MENU_OCULTO;
   for i := 1 to 10 do begin
-    Left := Left - 13;
+    Left := Left - 12;
     Application.ProcessMessages;
   end;
+  Left := POSICAO_MENU_VISIVEL;
 end;
 
 procedure TMenuLateral.Recolher;
@@ -149,6 +147,7 @@ begin
     Left := Left + 13;
     Application.ProcessMessages;
   end;
+  Left := POSICAO_MENU_OCULTO;
   Close;
 end;
 
@@ -164,7 +163,7 @@ begin
 
   lValorVolume := TAjustarVolume.Volume * 10;
 
-  DmImagens.lstIcones.GetBitmap(lIndiceIcone, imgMudo.Picture.Bitmap);
+  DmGpsToy.lstIcones.GetBitmap(lIndiceIcone, imgMudo.Picture.Bitmap);
   btnVolume.Caption := IntToStr(lValorVolume) + '%';
 end;
 
@@ -186,7 +185,7 @@ begin
     lIndiceIcone := ICONE_BRILHO_FORTE;
   end;
 
-  DmImagens.lstIcones.GetBitmap(lIndiceIcone, imgBrilho.Picture.Bitmap);
+  DmGpsToy.lstIcones.GetBitmap(lIndiceIcone, imgBrilho.Picture.Bitmap);
   btnBrilho.Caption := IntToStr(lValorBrilho) + '%';
 end;
 
@@ -207,4 +206,3 @@ begin
 end;
 
 end.
-

@@ -4,12 +4,12 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="16">
+    <Units Count="22">
       <Unit0>
         <Filename Value="GPSToy.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="7" Y="14"/>
-        <UsageCount Value="105"/>
+        <CursorPos X="11" Y="14"/>
+        <UsageCount Value="126"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -19,10 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMenuPrincipal"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
-        <CursorPos Y="8"/>
-        <UsageCount Value="105"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="20"/>
+        <CursorPos X="17" Y="28"/>
+        <UsageCount Value="126"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -33,10 +33,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UDesenho"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="81"/>
-        <CursorPos X="18" Y="83"/>
-        <UsageCount Value="105"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="155"/>
+        <CursorPos X="71" Y="86"/>
+        <UsageCount Value="126"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -47,236 +47,224 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMenuLateral"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="80"/>
-        <CursorPos X="57" Y="104"/>
-        <FoldState Value=" T3j90401312N"/>
-        <UsageCount Value="81"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="32" Y="190"/>
+        <UsageCount Value="102"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
-        <Filename Value="C:\lazarus\lcl\include\rasterimage.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="284"/>
-        <CursorPos Y="299"/>
-        <UsageCount Value="2"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\objpas\sysutils\sysutilh.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="210"/>
-        <CursorPos X="14" Y="225"/>
-        <UsageCount Value="3"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="C:\lazarus\lcl\interfaces\wince\wincewsfactory.pas"/>
-        <UnitName Value="WinCEWSFactory"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="73"/>
-        <CursorPos X="12" Y="108"/>
-        <UsageCount Value="5"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="C:\lazarus\lcl\interfaces\wince\wincewsextctrls.pp"/>
-        <UnitName Value="WinCEWSExtCtrls"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="153"/>
-        <UsageCount Value="5"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\winceunits\src\mmsystem.pp"/>
-        <UnitName Value="mmsystem"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="19"/>
-        <CursorPos X="14" Y="31"/>
-        <UsageCount Value="7"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\winunits-base\src\mmsystem.pp"/>
-        <UnitName Value="mmsystem"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2461"/>
-        <CursorPos X="48" Y="2475"/>
-        <UsageCount Value="6"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\win\sysosh.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="35"/>
-        <CursorPos X="3" Y="54"/>
-        <UsageCount Value="5"/>
-      </Unit10>
-      <Unit11>
-        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\wince\wininc\base.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="164"/>
-        <CursorPos X="6" Y="178"/>
-        <UsageCount Value="7"/>
-      </Unit11>
-      <Unit12>
-        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\win\wininc\base.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="159"/>
-        <CursorPos X="6" Y="173"/>
-        <UsageCount Value="6"/>
-      </Unit12>
-      <Unit13>
-        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\inc\systemh.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="76"/>
-        <CursorPos X="16" Y="92"/>
-        <UsageCount Value="5"/>
-      </Unit13>
-      <Unit14>
-        <Filename Value="uajustarvolume.pas"/>
+        <Filename Value="UAjustarVolume.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="AjustarVolume"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UAjustarVolume"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="63"/>
-        <CursorPos X="59" Y="82"/>
-        <UsageCount Value="64"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="19"/>
+        <CursorPos X="9" Y="67"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit14>
-      <Unit15>
-        <Filename Value="udmimagens.pas"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="udmgpstoy.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="DmImagens"/>
+        <ComponentName Value="DmGpsToy"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <UnitName Value="UDmImagens"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="21" Y="38"/>
-        <UsageCount Value="26"/>
+        <UnitName Value="UDmGpsToy"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="10"/>
+        <CursorPos X="21" Y="18"/>
+        <FoldState Value=" TJb3H021z"/>
+        <UsageCount Value="47"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="usonsanimais.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SonsAnimais"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="USonsAnimais"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="55"/>
+        <CursorPos X="45" Y="65"/>
+        <UsageCount Value="41"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\lazarus\lcl\include\rasterimage.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="284"/>
+        <CursorPos Y="299"/>
+        <UsageCount Value="0"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\objpas\sysutils\sysutilh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="210"/>
+        <CursorPos X="14" Y="225"/>
+        <UsageCount Value="1"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\lazarus\lcl\interfaces\wince\wincewsfactory.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="73"/>
+        <CursorPos X="12" Y="108"/>
+        <UsageCount Value="3"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="C:\lazarus\lcl\interfaces\wince\wincewsextctrls.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="153"/>
+        <UsageCount Value="3"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\winceunits\src\mmsystem.pp"/>
+        <UnitName Value="mmsystem"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="277"/>
+        <CursorPos X="10" Y="291"/>
+        <UsageCount Value="10"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\winunits-base\src\mmsystem.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2461"/>
+        <CursorPos X="48" Y="2475"/>
+        <UsageCount Value="4"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\win\sysosh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="3" Y="54"/>
+        <UsageCount Value="9"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\wince\wininc\base.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="162"/>
+        <CursorPos X="6" Y="176"/>
+        <UsageCount Value="9"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\win\wininc\base.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="159"/>
+        <CursorPos X="6" Y="173"/>
+        <UsageCount Value="4"/>
       </Unit15>
+      <Unit16>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\inc\systemh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="358"/>
+        <CursorPos X="3" Y="372"/>
+        <UsageCount Value="9"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="C:\lazarus\lcl\extctrls.pp"/>
+        <UnitName Value="ExtCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="498"/>
+        <CursorPos X="14" Y="513"/>
+        <UsageCount Value="9"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="C:\lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1390"/>
+        <CursorPos X="14" Y="1403"/>
+        <UsageCount Value="9"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\rtl\objpas\classes\classesh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="105"/>
+        <CursorPos X="41" Y="120"/>
+        <UsageCount Value="9"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="C:\lazarus\lcl\buttons.pp"/>
+        <UnitName Value="Buttons"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="13" Y="23"/>
+        <UsageCount Value="10"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="13" Y="17"/>
+        <UsageCount Value="10"/>
+      </Unit21>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="15" HistoryIndex="14">
       <Position1>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="168" Column="62" TopLine="144"/>
+        <Filename Value="UMenuPrincipal.pas"/>
+        <Caret Line="55" Column="16" TopLine="40"/>
       </Position1>
       <Position2>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="80" Column="19" TopLine="55"/>
+        <Filename Value="UMenuPrincipal.pas"/>
+        <Caret Line="24" Column="19"/>
       </Position2>
       <Position3>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="155" Column="32" TopLine="113"/>
+        <Filename Value="UDesenho.pas"/>
+        <Caret Line="191" Column="11" TopLine="172"/>
       </Position3>
       <Position4>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="78" Column="32" TopLine="55"/>
+        <Filename Value="UDesenho.pas"/>
+        <Caret Line="62" Column="4" TopLine="40"/>
       </Position4>
       <Position5>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="86" Column="19" TopLine="83"/>
+        <Filename Value="UMenuPrincipal.pas"/>
+        <Caret Line="52" Column="15" TopLine="40"/>
       </Position5>
       <Position6>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="152" Column="58" TopLine="95"/>
+        <Filename Value="usonsanimais.pas"/>
+        <Caret Line="57" Column="24" TopLine="46"/>
       </Position6>
       <Position7>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="97" Column="3" TopLine="95"/>
+        <Filename Value="usonsanimais.pas"/>
+        <Caret Line="70" Column="18" TopLine="49"/>
       </Position7>
       <Position8>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="85" Column="3" TopLine="119"/>
+        <Filename Value="usonsanimais.pas"/>
+        <Caret Line="63" Column="19" TopLine="42"/>
       </Position8>
       <Position9>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="127" TopLine="125"/>
+        <Filename Value="usonsanimais.pas"/>
+        <Caret Line="65" Column="45" TopLine="52"/>
       </Position9>
       <Position10>
         <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="47" Column="33" TopLine="33"/>
+        <Caret Line="62" Column="3" TopLine="138"/>
       </Position10>
       <Position11>
         <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="187" Column="12" TopLine="163"/>
+        <Caret Line="92" Column="3" TopLine="90"/>
       </Position11>
       <Position12>
-        <Filename Value="UMenuLateral.pas"/>
-        <Caret Line="11"/>
+        <Filename Value="UAjustarVolume.pas"/>
+        <Caret Line="151" Column="6" TopLine="127"/>
       </Position12>
       <Position13>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="103" Column="6" TopLine="100"/>
+        <Filename Value="UAjustarVolume.pas"/>
+        <Caret Line="10" Column="5"/>
       </Position13>
       <Position14>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="110" Column="6" TopLine="107"/>
+        <Filename Value="UMenuLateral.pas"/>
+        <Caret Line="11" Column="5"/>
       </Position14>
       <Position15>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="75" Column="4" TopLine="67"/>
+        <Filename Value="usonsanimais.pas"/>
+        <Caret Line="12" TopLine="10"/>
       </Position15>
-      <Position16>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="96" Column="59" TopLine="73"/>
-      </Position16>
-      <Position17>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="103" Column="59" TopLine="80"/>
-      </Position17>
-      <Position18>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="64" Column="43" TopLine="62"/>
-      </Position18>
-      <Position19>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="78" Column="3" TopLine="75"/>
-      </Position19>
-      <Position20>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="71" Column="9" TopLine="53"/>
-      </Position20>
-      <Position21>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="78" Column="27" TopLine="69"/>
-      </Position21>
-      <Position22>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="36" Column="22" TopLine="17"/>
-      </Position22>
-      <Position23>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="72" Column="59" TopLine="57"/>
-      </Position23>
-      <Position24>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="62" Column="31" TopLine="59"/>
-      </Position24>
-      <Position25>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="55" Column="5" TopLine="44"/>
-      </Position25>
-      <Position26>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="87" Column="26" TopLine="70"/>
-      </Position26>
-      <Position27>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="67" Column="39" TopLine="63"/>
-      </Position27>
-      <Position28>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="93" Column="67" TopLine="91"/>
-      </Position28>
-      <Position29>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="67" Column="31" TopLine="63"/>
-      </Position29>
-      <Position30>
-        <Filename Value="uajustarvolume.pas"/>
-        <Caret Line="104" Column="45" TopLine="91"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

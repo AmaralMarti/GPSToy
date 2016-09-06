@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons, StdCtrls, Grids,
-  UDmImagens, UMenuLateral, UDesenho;
+  UDmGpsToy, UMenuLateral, UDesenho, USonsAnimais;
 
 type
 
@@ -25,14 +25,13 @@ type
     procedure btnMenuClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure OpenDraw(Sender: TObject);
+    procedure AbrirDesenho(Sender: TObject);
+    procedure AbrirSonsAnimais(Sender: TObject);
   private
 
   public
 
   end;
-
-Function PlaySoundW(x1: PWideChar; x2: HMODULE; x3: DWORD): longbool; stdcall; external 'coredll.dll' name 'PlaySoundW';
 
 var
   MenuPrincipal: TMenuPrincipal;
@@ -45,15 +44,7 @@ implementation
 
 procedure TMenuPrincipal.FormShow(Sender: TObject);
 begin
-  Top := 0;
-  Left := 0;
-  Width := LARGURA_TELA;
-  Height := ALTURA_TELA;
-
-  btnMenu.Flat := True;
-  DmImagens.lstIcones.GetBitmap(ICONE_MENU, btnMenu.Glyph);
-
-  BringToFront;
+  DmGpsToy.InicializaForm(Self);
 end;
 
 procedure TMenuPrincipal.btnSairClick(Sender: TObject);
@@ -69,10 +60,16 @@ begin
   end;
 end;
 
-procedure TMenuPrincipal.OpenDraw(Sender: TObject);
+procedure TMenuPrincipal.AbrirDesenho(Sender: TObject);
 begin
   SysUtils.Beep;
   TDesenho.ShowScreen;
+end;
+
+procedure TMenuPrincipal.AbrirSonsAnimais(Sender: TObject);
+begin
+  SysUtils.Beep;
+  TSonsAnimais.ShowScreen;
 end;
 
 end.
