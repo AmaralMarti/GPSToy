@@ -2,8 +2,8 @@ object DmGpsToy: TDmGpsToy
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 150
-  HorizontalOffset = 579
-  VerticalOffset = 325
+  HorizontalOffset = 1453
+  VerticalOffset = 802
   Width = 150
   object lstIcones: TImageList
     Height = 32

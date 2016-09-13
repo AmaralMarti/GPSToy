@@ -1,7 +1,7 @@
 object MenuLateral: TMenuLateral
-  Left = 854
+  Left = 1723
   Height = 480
-  Top = 200
+  Top = 464
   Width = 124
   BorderStyle = bsNone
   Caption = 'MenuLateral'

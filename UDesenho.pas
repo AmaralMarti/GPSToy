@@ -5,13 +5,10 @@ unit UDesenho;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons, StdCtrls, ComCtrls, ColorBox,
-  UDmGpsToy, UMenuLateral;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons, StdCtrls, ComCtrls,
+  UDmGpsToy, UMenuLateral, UControleDesenho;
 
 type
-
-  { TDesenho }
-
   TDesenho = class(TForm)
     btnMenu: TSpeedButton;
     grpTraco: TGroupBox;
@@ -28,22 +25,18 @@ type
     shBranco: TShape;
     udTraco: TUpDown;
     procedure btnMenuClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure imgTravaClick(Sender: TObject);
-    procedure pnlDesenhoMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-    procedure pnlDesenhoMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
-    procedure pnlDesenhoMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure AtualizarCor(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure btnLimparClick(Sender: TObject);
-    procedure shTravaMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure AlterarTravamentoControles(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure udTracoClick(Sender: TObject; Button: TUDBtnType);
   private
-    FBloqueado: Boolean;
-    FMouseDown: Boolean;
-    FX: Integer;
-    FY: Integer;
-    procedure AtualizarTraco;
-    procedure ProcessarTrava;
+    FDesenho: TControleDesenho;
+    FListaControleCores: TList;
+    procedure OnChangeEspessuraTraco(const pEspessuraTraco: Byte);
+    procedure OnChangeControlesBloqueados(const pControlesBloqueados: Boolean);
+    procedure OnChangeCorTraco(const pCorTraco: TColor);
   public
     class procedure ShowScreen;
   end;
@@ -58,24 +51,35 @@ procedure TDesenho.FormShow(Sender: TObject);
 begin
   DmGpsToy.InicializaForm(Self);
 
-  AtualizarTraco;
+  {$Region 'Inicializa a lista dos Controles de Cores'}
+  FListaControleCores := TList.Create;
 
-  pnlDesenho.Canvas.Brush.Style := bsSolid;
-  pnlDesenho.Canvas.Pen.Color := clBlack;
-  pnlDesenho.Canvas.Brush.Color := clBlack;
+  FListaControleCores.Add(shPreto);
+  FListaControleCores.Add(shAmarelo);
+  FListaControleCores.Add(shAzul);
+  FListaControleCores.Add(shRosa);
+  FListaControleCores.Add(shVerde);
+  FListaControleCores.Add(shBranco);
+  {$EndRegion}
 
-  FBloqueado := True;
-  ProcessarTrava;
+  {$Region 'Inicializa o Objeto de Controle do Desenho'}
+  FDesenho := TControleDesenho.Create(pnlDesenho);
+
+  FDesenho.OnChangeControlesBloqueados := @OnChangeControlesBloqueados;
+  FDesenho.OnChangeCorTraco := @OnChangeCorTraco;
+  FDesenho.OnChangeEspessuraTraco := @OnChangeEspessuraTraco;
+  {$EndRegion}
 end;
 
-procedure TDesenho.imgTravaClick(Sender: TObject);
+procedure TDesenho.FormDestroy(Sender: TObject);
 begin
-  ProcessarTrava;
+  FreeAndNil(FDesenho);
+  FreeAndNil(FListaControleCores);
 end;
 
 procedure TDesenho.btnMenuClick(Sender: TObject);
 begin
-  if FBloqueado then begin
+  if FDesenho.ControlesBloqueados then begin
     Exit;
   end;
 
@@ -85,92 +89,37 @@ begin
   end;
 end;
 
-procedure TDesenho.pnlDesenhoMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-begin
-  AtualizarTraco;
-
-  FMouseDown := True;
-  FX := X;
-  FY := Y;
-end;
-
-procedure TDesenho.pnlDesenhoMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
-var
-  lDif: Integer;
-begin
-  if FMouseDown then begin
-    lDif := pnlDesenho.Canvas.Pen.Width div 6;
-    pnlDesenho.Canvas.Ellipse(X - lDif, Y - lDif, X + lDif, Y + lDif);
-
-    pnlDesenho.Canvas.Line(FX, FY, X, Y);
-    FX := X;
-    FY := Y;
-  end;
-end;
-
-procedure TDesenho.pnlDesenhoMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-begin
-  FMouseDown := False;
-end;
-
 procedure TDesenho.AtualizarCor(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  if FBloqueado then begin
-    Exit;
-  end;
-
-  SysUtils.Beep;
-
-  pnlDesenho.Canvas.Pen.Color := TShape(Sender).Brush.Color;
-  pnlDesenho.Canvas.Brush.Color := TShape(Sender).Brush.Color;
-
-  shPreto.Pen.Width := 1;
-  shAmarelo.Pen.Width := 1;
-  shAzul.Pen.Width := 1;
-  shRosa.Pen.Width := 1;
-  shVerde.Pen.Width := 1;
-  shBranco.Pen.Width := 1;
-
-  TShape(Sender).Pen.Width := 5;
+  FDesenho.CorTraco := TShape(Sender).Brush.Color;
 end;
 
 procedure TDesenho.btnLimparClick(Sender: TObject);
 begin
-  if FBloqueado then begin
-    Exit;
-  end;
-
-  pnlDesenho.Repaint;
+  FDesenho.LimparDesenho;
 end;
 
-procedure TDesenho.shTravaMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+procedure TDesenho.AlterarTravamentoControles(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  ProcessarTrava;
+  FDesenho.ControlesBloqueados := not FDesenho.ControlesBloqueados;
 end;
 
 procedure TDesenho.udTracoClick(Sender: TObject; Button: TUDBtnType);
 begin
-  AtualizarTraco;
+  FDesenho.EspessuraTraco := udTraco.Position;
 end;
 
-procedure TDesenho.AtualizarTraco;
+procedure TDesenho.OnChangeEspessuraTraco(const pEspessuraTraco: Byte);
 begin
-  if FBloqueado then begin
-    Exit;
-  end;
-
-  lbTraco.Caption := IntToStr(udTraco.Position);
-  pnlDesenho.Canvas.Pen.Width := udTraco.Position;
+  lbTraco.Caption := IntToStr(pEspessuraTraco);
 end;
 
-procedure TDesenho.ProcessarTrava;
+procedure TDesenho.OnChangeControlesBloqueados(const pControlesBloqueados: Boolean);
 var
   lIndiceIcone: Integer;
   lCor: TColor;
 begin
-  FBloqueado := not FBloqueado;
-
-  if FBloqueado then begin
+  if pControlesBloqueados then begin
     lIndiceIcone := ICONE_TRAVA_ON;
     lCor := clRed;
   end else begin
@@ -180,6 +129,22 @@ begin
 
   DmGpsToy.lstIcones.GetBitmap(lIndiceIcone, imgTrava.Picture.Bitmap);
   shTrava.Brush.Color := lCor;
+end;
+
+procedure TDesenho.OnChangeCorTraco(const pCorTraco: TColor);
+var
+  i: Integer;
+  lComponenteCor: TShape;
+begin
+
+  for i := 0 to pred(FListaControleCores.Count) do begin
+    lComponenteCor := TShape(FListaControleCores[i]);
+    if lComponenteCor.Brush.Color = pCorTraco then begin
+      lComponenteCor.Pen.Width := 5;
+    end else begin
+      lComponenteCor.Pen.Width := 1;
+    end;
+  end;
 end;
 
 class procedure TDesenho.ShowScreen;

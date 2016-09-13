@@ -5,13 +5,10 @@ unit UMenuPrincipal;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons, StdCtrls, Grids,
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
   UDmGpsToy, UMenuLateral, UDesenho, USonsAnimais;
 
 type
-
-  { TMenuPrincipal }
-
   TMenuPrincipal = class(TForm)
     imgSonsAnimais: TImage;
     imgFundo: TImage;

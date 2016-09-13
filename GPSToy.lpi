@@ -33,7 +33,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="8">
       <Unit0>
         <Filename Value="GPSToy.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -71,7 +71,7 @@
         <UnitName Value="UAjustarVolume"/>
       </Unit4>
       <Unit5>
-        <Filename Value="udmgpstoy.pas"/>
+        <Filename Value="UDmGpsToy.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="DmGpsToy"/>
         <HasResources Value="True"/>
@@ -79,13 +79,18 @@
         <UnitName Value="UDmGpsToy"/>
       </Unit5>
       <Unit6>
-        <Filename Value="usonsanimais.pas"/>
+        <Filename Value="USonsAnimais.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="SonsAnimais"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="USonsAnimais"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="UControleDesenho.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UControleDesenho"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

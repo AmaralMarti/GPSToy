@@ -1,7 +1,7 @@
 object SonsAnimais: TSonsAnimais
-  Left = 369
+  Left = 532
   Height = 480
-  Top = 255
+  Top = 244
   Width = 800
   BorderStyle = bsNone
   ClientHeight = 480

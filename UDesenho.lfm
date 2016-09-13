@@ -1,27 +1,15 @@
 object Desenho: TDesenho
-  Left = 373
+  Left = 1044
   Height = 480
-  Top = 217
+  Top = 464
   Width = 800
   BorderStyle = bsNone
   ClientHeight = 480
   ClientWidth = 800
   Color = clWhite
+  OnDestroy = FormDestroy
   OnShow = FormShow
   LCLVersion = '1.4.0.4'
-  object pnlDesenho: TPanel
-    Left = 0
-    Height = 480
-    Top = 0
-    Width = 714
-    Align = alLeft
-    Color = clWhite
-    ParentColor = False
-    TabOrder = 0
-    OnMouseDown = pnlDesenhoMouseDown
-    OnMouseMove = pnlDesenhoMouseMove
-    OnMouseUp = pnlDesenhoMouseUp
-  end
   object grpTraco: TGroupBox
     Left = 720
     Height = 63
@@ -33,7 +21,7 @@ object Desenho: TDesenho
     Font.Height = -16
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     object lbTraco: TLabel
       Left = 8
       Height = 32
@@ -133,7 +121,7 @@ object Desenho: TDesenho
     Top = 437
     Width = 75
     Brush.Color = clLime
-    OnMouseDown = shTravaMouseDown
+    OnMouseDown = AlterarTravamentoControles
   end
   object imgTrava: TImage
     Left = 745
@@ -141,6 +129,14 @@ object Desenho: TDesenho
     Top = 439
     Width = 32
     AntialiasingMode = amOn
-    OnClick = imgTravaClick
+    OnMouseDown = AlterarTravamentoControles
+  end
+  object pnlDesenho: TPanel
+    Left = 0
+    Height = 480
+    Top = 0
+    Width = 712
+    Align = alLeft
+    TabOrder = 1
   end
 end

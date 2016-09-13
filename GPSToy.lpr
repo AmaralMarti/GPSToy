@@ -13,7 +13,7 @@ uses
   UMenuPrincipal,
   UMenuLateral,
   UDesenho,
-  USonsAnimais;
+  USonsAnimais, UControleDesenho;
 
 {$R *.res}
 
